@@ -36694,3 +36694,19 @@ function ngViewFillContentFactory($compile, $controller, $route) {
 
 
 })(window, window.angular);
+
+angular
+    .module('helloWorldApp', ['ngRoute'])
+    .config(['$routeProvider', function ($routeProvider) {
+        $routeProvider
+            .when('/', {
+                templateUrl: 'views/home.html',
+                controller: 'HomeCtrl'
+            })
+    }
+    ])
+angular.module('helloWorldApp')
+    .controller('HomeCtrl', ['$scope', function ($scope) {
+        $scope.message = 'Awesome!'
+    }
+    ])
